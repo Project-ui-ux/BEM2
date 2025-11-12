@@ -1,0 +1,222 @@
+:root {
+  --bg-body: #fff;
+  --text-color: #212529;
+  --bg-jumbotron: #dc3545; /* bg-danger */
+  --text-jumbotron: #fff;
+  --bg-section-secondary: #6c757d; /* bg-secondary */
+  --text-section-secondary: #fff;
+  --bg-card: #fff;
+  --card-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  --bg-keyboard-box: #ffffff;
+  --text-keyboard-name: #000000;
+  --text-keyboard-watermark: #313131;
+  --bg-footer: #0d6efd; /* bg-primary */
+  --text-footer: #fff;
+  --nav-link-color: black;
+}
+
+.dark-mode {
+  --bg-body: #1a1a1a;
+  --text-color: #e0e0e0;
+  --bg-jumbotron: #4a1a20;
+  --text-jumbotron: #f8d7da;
+  --bg-section-secondary: #2c3034;
+  --text-section-secondary: #e0e0e0;
+  --bg-card: #2c3034;
+  --card-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+  --bg-keyboard-box: #2c3034;
+  --text-keyboard-name: #e0e0e0;
+  --text-keyboard-watermark: #cccccc;
+  --bg-footer: #052c65;
+  --text-footer: #e0e0e0;
+  --nav-link-color: #e0e0e0;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-color);
+}
+body .navbar .container .collapse .nav-item .nav-link {
+  color: black;
+}
+
+.container img {
+  margin-right: 10px;
+}
+
+video {
+  width: 100%;
+}
+
+.jumbotron {
+  padding-top: 10rem;
+  background-color: var(--bg-jumbotron);
+  color: var(--text-jumbotron);
+}
+
+footer p {
+  margin: 0;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.periode {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.col-md-5 p {
+  text-align: justify;
+}
+
+section {
+  padding-top: 5rem;
+}
+
+.card:hover {
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Optimized for smoother hover effects */
+  transform: scale(1.05); /* Changed to zoom-in effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+/* My Keyboard Section */
+.keyboard-box {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 300px;
+  transform-style: preserve-3d;
+}
+
+.keyboard-box::before {
+  content: "BEM";
+  position: absolute;
+  color: var(--text-keyboard-watermark);
+  font-size: 4em;
+  font-weight: bold;
+  font-style: italic;
+  top: 25px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.keyboard-box:hover::before {
+  opacity: 0.2;
+}
+
+.keyboard-box::after {
+  content: "STIKep";
+  position: absolute;
+  color: var(--text-keyboard-watermark);
+  font-size: 3em;
+  font-weight: bold;
+  font-style: italic;
+  top: 180px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.keyboard-box:hover::after {
+  opacity: 0.2;
+}
+
+.keyboard-name {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: var(--text-keyboard-name);
+  text-align: center;
+  font-size: 2em;
+  opacity: 0;
+  transform: translate3d(0, 0, 50px);
+  transition: 0.8s;
+}
+
+.keyboard-box:hover .keyboard-name {
+  top: 20px;
+  opacity: 1;
+}
+
+.keyboard-detail-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate3d(-50%, 0, 100px);
+  opacity: 0;
+  transition: 0.8s;
+  z-index: 3;
+}
+
+.keyboard-box:hover .keyboard-detail-button {
+  opacity: 1;
+  bottom: 25px;
+}
+
+.keyboard-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -52%, 80px);
+  width: 200px;
+  max-width: 60%;
+  transition: 1s;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .keyboard-img {
+    width: 60%; /* Memastikan gambar sepenuhnya menyesuaikan layar kecil */
+  }
+}
+
+.keyboard-box:hover .keyboard-img {
+  transform: translate3d(-50%, -52%, 100px) rotate(5deg) scale(1.2);
+}
+
+.social-links img {
+  width: 40px; /* Ukuran logo */
+  height: 40px;
+  margin: 10px;
+  transition: transform 0.7s ease; /* Reduced duration for faster feedback */
+}
+
+.social-links img:hover {
+  transform: scale(1.2); /* Increased zoom effect for better visibility */
+}
+
+.dark-mode .navbar-dark {
+  background-color: #343a40 !important; /* Bootstrap's dark color */
+}
+
+.dark-mode .nav-link {
+  color: var(--nav-link-color) !important;
+}
+
+.svg-separator path {
+  fill: var(--bg-body);
+}
+
+#theme-toggle {
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.rounded-circle-custom {
+  border-radius: 50%;
+}
